@@ -1,0 +1,492 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--fontColor);
+  font-family: "Montserrat", sans-serif;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+/* :::::::::::::::::::::  Theme  :::::::::::::::::::::::: */
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing : auto;
+  font-weight : <weight>;
+  font-style : normal;
+}
+
+:root{
+  --mainColor : #436652;
+  --supportingColor : #113d46;
+  --outColor : #00dbc5;
+  --headingColor : #122d36;
+  --backgroundColor : #000a19;
+  --fontColor :#cccec3;
+  --whiteColor : #fff;
+  
+  --blurColor :radial-gradient(circle,rgb(0, 255, 251,0.6),rgb(0, 244, 220,0.3),rgb(0, 244, 220,0.1),rgb(0, 244, 220,0.05)) ;
+}
+/* :::::::::::::::::::::  Selector :::::::::::::::::::::::: */
+*::selection{
+  background-color: var(--whiteColor);
+  color: var(--outColor);
+}
+/* :::::::::::::::::::::   Sidebar   :::::::::::::::::::::::: */
+body::-webkit-scrollbar{
+  display: block;
+  width: 8px;
+  background-color: var(--backgroundColor);
+}
+body::-webkit-scrollbar-thumb{
+  background-color: var(--fontColor);
+  border-radius: 50px;
+}
+/* ::::::::::::::::::::  Nav Bar  Start Here :::::::::::::::::::: */
+#nav{
+  height: 130px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 150px;
+  gap: 40px;
+  z-index: 99;
+}
+#nav img{
+  height: 80px;
+}
+
+#nav h4{
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#nav h4:hover{
+  color : var(--mainColor);
+  font-weight : 600;
+  scale : 1.1;
+  border-bottom : 2px solid var(--mainColor);
+}
+
+/* ::::::::::::::::::::::::  Nav BAr End Here ::::::::::::::::::::: */
+
+#cursor{
+  width : 15px;
+  height : 15px;
+  border-radius : 50%;
+  background-color : var(--outColor);
+  position : fixed;
+  z-index : 99;
+  opacity: 0;
+}
+#cursorBlur{
+  width : 300px;
+  height : 300px;
+  border-radius : 50%;
+  background-image : var(--blurColor);
+  position : fixed;
+  filter : blur(40px);
+  z-index : 9;
+  opacity: 0;
+}
+
+
+
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index : -1;
+}
+
+/* :::::::::::::::::::::::: Main ::::::::::::::::::::::::::::::::: */
+
+#main{
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.47);
+}
+/*:::::::::::::::::::::  PAGE1 START HERE  :::::::::::::::::::::::*/
+#page1{
+  height: 100vh;
+  width: 100%;
+  position : relative;
+  display: flex;
+  flex-direction : column;
+  align-items : center;
+  justify-content : center; 
+  text-align : center;
+  z-index : 10;
+}
+#page1 h1{
+  font-size : 100px;
+  font-weight : 900;
+  position : relative;
+}
+
+#page1 h1::before{
+  content :"LEARN. EAT. REPEAT.";
+  position: absolute;
+  color : var(--supportingColor);
+  top : -4px;
+  left : -4px;
+  -webkit-text-stroke : 2px var(--outColor);
+  z-index : -1;
+}
+
+#page1 h2{
+  font-size : 34px;
+  font-weight : 740;
+  margin-top : 10px;
+  margin-bottom : 20px;
+}
+
+#page1 p{
+  font-size : 17px;
+  font-weight : 499;
+  width : 50%;
+}
+/*:::::::::::::::::::::::: PAGE 1 END HERE :::::::::::::::::::::: */
+
+/*::::::::::::::::::::::  PAGE 2 START HERE  :::::::::::::::::::*/
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+/*::::::::::::::::::::::  SCROLLER START HERE   :::::::::::::::::::*/
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto; 
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.scrollIn {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 100px;
+  font-weight: 800;
+  margin-right: 10px;
+  font-family: 'Segoe UI';
+  text-transform: uppercase;
+  color: transparent;
+  transition: all linear 0.5s;
+  -webkit-text-stroke: 2px var(--outColor);
+ 
+}
+#scroller h4:hover{
+  color: var(--outColor);
+  cursor: pointer;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/*::::::::::::::::::::::  SCROLLER END HERE   :::::::::::::::::::::*/
+/* ::::::::::::::::     ABOUT US START HERE   ::::::::::::::::::::: */
+#aboutUs{
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0 50px;
+  position: relative;
+  z-index: 10;
+}
+#aboutUs img{
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+#aboutUsIn{
+  width: 40%;
+  text-align: center;
+}
+#aboutUsIn h3{
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+#aboutUsIn p{
+  font-size: 20px;
+  line-height: 26px;
+}
+/* ::::::::::::::::      ABOUT US END HERE   :::::::::::::::: */
+/* ::::::::::::::::         CARDS       ::::::::::::::::::::::  */
+#cardContainer{
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 10;
+}
+
+.cards{
+  height: 80%;
+  width: 24%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+#card1{
+  background-image: url(https://images.pexels.com/photos/18426524/pexels-photo-18426524/free-photo-of-wine-glasses-standing-on-a-cafe-table.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+#card2{
+  background-image: url(https://images.pexels.com/photos/1530423/pexels-photo-1530423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+#card3{
+  background-image: url(https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=600) ;
+}
+.overlay{
+  height: 100%;
+  width: 100%;
+  background-color: var(--outColor);
+  padding: 20px;
+  padding-top: 130px;  
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.overlay h4{
+  color: var(--headingColor);
+  font-size: 30px;
+  font-weight: 800;
+  white-space: nowrap;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.overlay p{
+  color: var(--headingColor);
+  font-size: 18px;
+}
+
+.cards:hover .overlay{
+  opacity: 1;
+}
+.cards:hover{
+  perspective: 1000px;
+  transform: rotate3d(1,1,0,20deg);
+}
+/* ::::::::::::::::::::::::::  CARD END HERE   ::::::::::::::::::  */
+/* ::::::::::::::::::::::     STRIP START HERE   ::::::::::::::::: */
+#strip{
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: var(--blurColor);
+}
+#strip h4{
+  width: 50%;
+  font-size: 23px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--headingColor);
+  line-height: 40px;
+}
+#strip img{
+  height: 100%;
+  object-fit: cover;
+  width: 20%;
+  
+}
+
+/* ::::::::::::::::::::::     STRIP END HERE     ::::::::::::::::: */
+/*::::::::::::::::::::::  PAGE 2 END HERE   ::::::::::::::::::::::::*/
+/* ::::::::::::::::::::::     PAGE 3 START HERE   :::::::::::::::::*/
+#page3{
+  height: 100vh;
+  width: 100%;
+  background-color: var(--backgroundColor);
+}
+#reviews{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#reviews>p{
+  font-size: 24px;
+  font-weight: 700;
+  width: 60%;
+  text-align: center;
+  line-height: 45px;
+  text-transform: uppercase;
+  
+}
+#reviews img{
+  position: absolute;
+  height: 60px;
+}
+#comma1{
+  top : 25%;
+  left: 15%;
+}
+#comma2{
+  bottom : 25%;
+  right: 15%;
+  
+}
+/* ::::::::::::::::::::::     PAGE 3 END HERE     ::::::::::::::::: */
+/* ::::::::::::::::::::::     PAGE 4 START HERE   ::::::::::::::::: */
+#page4{
+  height: 40vh;
+  width: 100%;
+  background-color: var(--backgroundColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+}
+#page4 h1{
+  position: absolute;
+  font-size: 80px;
+  font-weight: 800;
+  font-family: 'Segoe UI';
+  color: transparent;
+  -webkit-text-stroke: 2px var(--outColor);
+  top: -14%;
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 5%;
+}
+.elem{
+  width: 26%;
+  height: 70%;
+  overflow: hidden;
+  border-radius: 21px;
+  position: relative;
+}
+.elem h2{
+  height: 100%;
+  width: 100%;
+  background-color: var(--outColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--headingColor);
+  font-weight: 800;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.5s ease ;
+}
+.elem img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1.1;
+  transition: all 0.5s ease ;
+}
+.elem:hover h2{
+  color: var(--fontColor);
+  background-color: transparent;
+}
+.elem:hover img{
+  scale: 1;
+}
+/* ::::::::::::::::::::::     PAGE 4 END HERE     ::::::::::::::::: */
+/* ::::::::::::::::::::    FOOTER      ::::::::::::::::::::::::::: */
+footer{
+  height: 50vh;
+  width: 100%;
+  background-color: var(--backgroundColor);
+}
+#footerStrip{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: var(--blurColor);
+  position: relative;
+  z-index: 10;
+}
+#footerStrip img{
+    height: 100%;
+    object-fit: cover;
+    width: 20%;
+}
+#icons{
+  height: 200px;
+  width: 200px;
+  position: relative;
+  translate: -130px;
+}
+#icons img{
+  height: 70%;
+  width: 70%;
+  object-fit: cover;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+}
+#iconsIn{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  bottom: 15%;  
+  left: 25%;  
+}
+#iconsIn i{
+  font-size: 20px;
+  color: var(--fontColor);
+}
+.navText{
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+  line-height: 40px;
+}
+.navText h4{
+  font-size: 20px;
+  color: var(--headingColor);
+  font-weight: 800;
+}
+.navText h4:hover{
+  color: var(--fontColor);
+}
+#navTextCol1{
+  margin-right: 50px;
+}
+#navTextCol2{
+  margin-left: 50px;
+}
+#address{
+  padding:  20px ;
+  height: 200px;
+  width: 200px;
+  translate: 130px;
+}
+#address p{
+  font-size: 14px;
+  color: var(--fontColor);
+}
